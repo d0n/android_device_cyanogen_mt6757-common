@@ -15,7 +15,7 @@
 #
 
 # Device path
-LOCAL_PATH := device/ulefone/mt6757-common
+COMMON_PATH := device/ulefone/mt6757-common
 
 include device/ulefone/mt6757-common/PlatformConfig.mk
 include device/ulefone/mt6757-common/board/mt6757.mk
@@ -24,11 +24,10 @@ TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
 TARGET_CYANOGEN_COMMON := mt6757
 BOARD_USES_CYANOGEN_HARDWARE := true
-COMMON_PATH := device/ulefone/mt6757-common
 TARGET_BOARD_PLATFORM := mt6757
 TARGET_SYSTEM_PROP := $(COMMON_PATH)/system.prop
 TARGET_BOOTLOADER_BOARD_NAME := mt6757
-MTK_PROJECT_CONFIG := $(LOCAL_PATH)/ProjectConfig.mk
+MTK_PROJECT_CONFIG := $(COMMON_PATH)/ProjectConfig.mk
 
 # FSTAB
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/fstab.mt6757
@@ -55,7 +54,7 @@ BOARD_HARDWARE_CLASS += $(COMMON_PATH)/cmhw
 
 ifeq ($(HOST_OS),linux)
   ifeq ($(TARGET_BUILD_VARIANT),user)
-		WITH_DEXPREOPT ?= true
+    WITH_DEXPREOPT ?= true
   endif
 endif
 
@@ -100,8 +99,8 @@ TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 TARGET_NO_SENSOR_PERMISSION_CHECK := true
 
 # SELinux
-BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
-POLICYVERS := 29
+#BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
+#POLICYVERS := 29
 
 # Wireless
 WPA_SUPPLICANT_VERSION := VER_0_8_X
