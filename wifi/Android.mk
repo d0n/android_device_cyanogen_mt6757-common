@@ -12,10 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-LOCAL_PATH := $(call my-dir)
-
-ifeq ($(MTKPATH),)
-
 include $(CLEAR_VARS)
 LOCAL_MODULE = libwifi-hal-mt66xx
 LOCAL_MODULE_CLASS = STATIC_LIBRARIES
@@ -35,5 +31,3 @@ LOCAL_MODULE_SUFFIX = .a
 LOCAL_MULTILIB = 32
 LOCAL_SRC_FILES_32 = arm/libwifi-hal-mt66xx.a
 include $(BUILD_PREBUILT)
-
-endif
