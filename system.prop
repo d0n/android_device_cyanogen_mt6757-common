@@ -15,15 +15,15 @@ persist.radio.fd.off.counter=5
 persist.radio.fd.r8.counter=15
 persist.radio.fd.off.r8.counter=5
 
-ro.telephony.ril_class=MT6735
+ro.telephony.ril_class=MT6757
 
 # Wifi
 wifi.interface=wlan0
-wifi.tethering.interface=ap
+wifi.tethering.interface=ap0
 wifi.direct.interface=p2p0
 
 # Graphics
-ro.opengles.version=196608
+ro.opengles.version=196610
 
 # FRP
 ro.frp.pst=/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/frp
