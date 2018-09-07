@@ -1,0 +1,34 @@
+# agold guotuo for fingerprint init
+
+#microarray
+on post-fs-data
+	mkdir /data/system/ma_fingerprint 0777 system system
+	chmod 0777 /data/system/ma_fingerprint
+	chmod 0777 /data/system/ma_fingerprint/sensor.properties
+	chmod 0777 /data/system/users/0/fpdata
+	chmod 0777 /data/system/users/0/fpdata/group-0-template-0.data
+	chmod 0777 /data/system/users/0/fpdata/group-0-template-1.data
+	chmod 0777 /data/system/users/0/fpdata/group-0-template-2.data
+	chmod 0777 /data/system/users/0/fpdata/group-0-template-3.data
+	chmod 0777 /data/system/users/0/fpdata/group-0-template-4.data	
+
+#sunwave
+service fpserver /system/bin/fpserver
+	class late_start
+	user root
+
+#dolfa
+service etsd /system/bin/etsd
+	class late_start
+	user root
+
+#goodix
+service gx_fpd /system/bin/goodixfingerprintd
+	class late_start
+	user root
+
+#fingerprintd
+service fingerprintd /system/bin/fingerprintd
+	class late_start
+	user system
+
